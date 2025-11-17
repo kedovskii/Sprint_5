@@ -1,12 +1,12 @@
 from selenium.webdriver.common.by import By
 
-
 class MainPageLocators:
     LOGIN_REGISTER_BUTTON = (By.XPATH, '//button[contains(normalize-space(), "Вход и регистрация")]')
     PLACE_AD_BUTTON = (By.XPATH, '//*[self::button or self::a][contains(normalize-space(), "Разместить объявление")]')
     USER_AVATAR = (By.XPATH, '//button[contains(@class, "circleSmall")]')
     USER_NAME = (By.XPATH, '//h3[contains(@class, "profileText") and contains(@class, "name")]')
     LOGOUT_BUTTON = (By.XPATH, '//button[contains(normalize-space(), "Выйти")]')
+    AD_CARD = (By.XPATH, '//div[contains(@class,"homePage")]//div[@class="card"][1]')
 
 class AuthModalWindowLocators:
     # Кнопка/ссылка «Нет аккаунта»
@@ -50,5 +50,5 @@ class CreateAdLocators:
     PUBLISH_BUTTON = (By.XPATH, '//button[contains(normalize-space(),"Опубликовать")]')
     
 class ProfileLocators:
-    PROFILE_AVATAR = (By.XPATH, '//div[@id="root"]//button[contains(@class,"circleSmall")]')
-    MY_AD = (By.XPATH, '//h1[normalize-space()="Мои объявления"]/following-sibling::div//img[@class="picture"]')
+    PROFILE_BUTTON = (By.XPATH, '//button[contains(@class, "circleSmall")]')
+    MY_AD = (By.XPATH, '//div[contains(@class, "profilePage")]//div[contains(@class, "card")]//img[contains(@class, "picture")]')

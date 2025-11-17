@@ -1,16 +1,17 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import MainPageLocators, AuthModalWindowLocators
+from data import TestData
 
 
 class TestUserLogout:
 
-    def test_user_can_logout_successfully(self, driver, base_url, existing_user_credentials):
-        email = existing_user_credentials["email"]
-        password = existing_user_credentials["password"]
+    def test_user_can_logout_successfully(self, driver):
+        email = TestData.EXISTING_USER_EMAIL
+        password = TestData.EXISTING_USER_PASSWORD
 
         # Шаг 1. Открыть главную страницу
-        driver.get(base_url)
+        driver.get(TestData.BASE_URL)
 
         # Шаг 2. Нажать кнопку «Вход и регистрация»
         WebDriverWait(driver, 5).until(expected_conditions.element_to_be_clickable(MainPageLocators.LOGIN_REGISTER_BUTTON)).click()
